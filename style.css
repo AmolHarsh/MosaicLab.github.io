@@ -77,7 +77,7 @@ p {
     }
 .student-card {
     background-color: #898989;
-    border-left: 3px solid #004080;
+    border-left: 10px solid #004080;
     padding: 10px;
     width: calc(33.33% - 20px);
     box-sizing: border-box;
