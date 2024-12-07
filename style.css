@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background: #0056b3;
+    background: #182B49;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -33,13 +33,13 @@ nav {
 nav a {
     margin: 0 20px;
     text-decoration: none;
-    color: #0056b3;
+    color: #182B49;
     font-weight: bold;
     font-size: 1.1em;
 }
 
 nav a:hover {
-    color: #003f82;
+    color: #182B49;
     text-decoration: underline;
 }
 
@@ -51,12 +51,12 @@ section {
 }
 
 section h2 {
-    color: #0056b3;
+    color: #182B49;
     margin-bottom: 20px;
 }
 
 footer {
-    background: #0056b3;
+    background: #182B49;
     color: white;
     text-align: center;
     padding: 10px 0;
