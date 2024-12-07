@@ -3,18 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>People - MOSAIC Lab</title>
+    <title>Team - MOSAIC Lab</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Inline styles to ensure left alignment for lists */
-        ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove default padding */
+        
+        .student-card img {
+            width: 100px; /* Enlarged the image size */
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 15px;
         }
-        li {
-            text-align: left;
-            margin-bottom: 5px;
-            font-size: 1em;
+        .student-card h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .student-card p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .faculty-profile {
+            text-align: center;
+        }
+        .faculty-profile img {
+            width: 150px; /* Enlarged image size */
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .visiting-scholars {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .visiting-scholars .student-card {
+            margin-right: 20px;
+            text-align: center;
+        }
+        .visiting-scholars img {
+            width: 120px; /* Enlarged image size */
+            height: 120px;
         }
     </style>
 </head>
@@ -30,106 +58,161 @@
         <a href="sponsors.html">Sponsors</a>
     </nav>
     <section>
-        <h2>People</h2>
+        <h2 id="team-header">Team</h2>
         
         <!-- Faculty Section -->
-        <h3>Faculty</h3>
-        <div>
-            <img src="https://datascience.ucsd.edu/wp-content/uploads/2023/01/Tauhidur_Headshot.jpg" alt="Description of Image" />
-            <p><strong style="font-size: 1.2em; color: #0056b3;">Tauhidur Rahman</strong></p>
-            <p>Assistant Professor<br>
-               Halıcıoğlu Data Science Institute<br>
-               University of California San Diego<br>
-               <a href="mailto:trahman@ucsd.edu">trahman@ucsd.edu</a></p>
+        <h3>Principal Investigator</h3>
+        <div class="faculty-profile">
+            <img src="https://datascience.ucsd.edu/wp-content/uploads/2023/01/Tauhidur_Headshot.jpg" alt="Tauhidur Rahman">
+            <div>
+                <h2>Tauhidur Rahman</h2>
+                <p>Assistant Professor<br>
+                   Halıcıoğlu Data Science Institute<br>
+                   University of California San Diego<br>
+                   <a href="mailto:trahman@ucsd.edu">trahman@ucsd.edu</a>
+                </p>
+            </div>
         </div>
 
         <!-- Current Students Section -->
         <hr>
-        <h2>Current Students</h2>
+        <h3>Current Students</h3>
         <div class="students-container">
             <div class="student-card">
-                <h2>Avanti Bhandarkar</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U06STPADGEL-06fa36d08fac-192" alt="Avanti Bhandarkar">
+                <div>
+                    <h2>Avanti Bhandarkar</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Caden Stewart</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U07HV9YUG7R-0146167527a7-192" alt="Caden Stewart">
+                <div>
+                    <h2>Caden Stewart</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Conan Minihan</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U07LS02B3AR-67cb49f57ae0-192" alt="Conan Minihan">
+                <div>
+                    <h2>Conan Minihan</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Farhan</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-UCEB431HB-g93307fcac3d-72" alt="Farhan">
+                <div>
+                    <h2>Farhan</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Forsad Al Hossain</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-UB3DRKGQJ-g6775b34fd6e-512" alt="Forsad Al Hossain">
+                <div>
+                    <h2>Forsad Al Hossain</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Jiacheng Qiu</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U07MB1N031S-4abdf8eef7cf-72" alt="Jiacheng Qiu">
+                <div>
+                    <h2>Jiacheng Qiu</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Leo</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U07BRBD8B4N-g4c24e850ca3-72" alt="Leo">
+                <div>
+                    <h2>Leo</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Manasa Kalanadhabhatta</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-UCPP6H6JU-g86cfaef908a-72" alt="Manasa Kalanadhabhatta">
+                <div>
+                    <h2>Manasa Kalanadhabhatta</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Masfiqur Rahaman</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U05262EDL7K-gfec36957135-192" alt="Masfiqur Rahaman">
+                <div>
+                    <h2>Masfiqur Rahaman</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Nigel Doering</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U06064CP26S-11c1d2863dd3-72" alt="Nigel Doering">
+                <div>
+                    <h2>Nigel Doering</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Tamar Schaap</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U07RKB10QSD-g9f68c6d1637-72" alt="Tamar Schaap">
+                <div>
+                    <h2>Tamar Schaap</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Tanjid Hasan Tonmoy</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U03FLJEEM0E-9c6b934ef264-72" alt="Tanjid Hasan Tonmoy">
+                <div>
+                    <h2>Tanjid Hasan Tonmoy</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Yunfei Luo</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U051CT2DWRM-9542e23663f9-72" alt="Yunfei Luo">
+                <div>
+                    <h2>Yunfei Luo</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Zhongyang Zhang</h2>
-                <p>Graduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-UQQLEC9SL-91305cb16703-72" alt="Zhongyang Zhang">
+                <div>
+                    <h2>Zhongyang Zhang</h2>
+                    <p>Graduate Student</p>
+                </div>
             </div>
         </div>
-        
+
         <!-- Alumni Section -->
         <hr>
-        <h2>Alumni</h2>
-        <div class="students-container">
-            <div class="student-card">
+        <h3>Alumni</h3>
+        <div class="student-card">
+            <img src="https://ca.slack-edge.com/TB36W6R8V-U05GSHCS8AX-8b2a51c60f8a-72" alt="Bhanu Teja Gullapalli">
+            <div>
                 <h2>Bhanu Teja Gullapalli</h2>
                 <p>Postdoc</p>
             </div>
         </div>
 
-        <!-- Visiting Section -->
+        <!-- Visiting Scholars Section -->
         <hr>
-        <h2>Visiting Scholars</h2>
-        <div class="students-container">
+        <h3>Visiting Scholars</h3>
+        <div class="visiting-scholars">
             <div class="student-card">
-                <h2>Amol Harsh</h2>
-                <p>Undergraduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U07EDSUJ35E-39a5a94732ab-72" alt="Amol Harsh">
+                <div>
+                    <h2>Amol Harsh</h2>
+                    <p>Undergraduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Kaustubh Singh</h2>
-                <p>Undergraduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U05HN2M61SB-7537975b59f7-72" alt="Kaustubh Singh">
+                <div>
+                    <h2>Kaustubh Singh</h2>
+                    <p>Undergraduate Student</p>
+                </div>
             </div>
             <div class="student-card">
-                <h2>Rahath Malladi</h2>
-                <p>Undergraduate Student</p>
+                <img src="https://ca.slack-edge.com/TB36W6R8V-U05KB26S3FC-97f8914730b5-72" alt="Rahath Malladi">
+                <div>
+                    <h2>Rahath Malladi</h2>
+                    <p>Undergraduate Student</p>
+                </div>
             </div>
         </div>
     </section>

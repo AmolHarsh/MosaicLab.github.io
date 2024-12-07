@@ -6,15 +6,104 @@
     <title>Research - MOSAIC Lab</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Inline styles to ensure left alignment */
-        section {
-            text-align: left;
-            margin: 0 auto;
-            max-width: 900px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
+
+        header {
+            background-color: #00274C;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #182B49;
+            font-weight: bold;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-box {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .project-box img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .project-box h3 {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #00274C;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
@@ -30,53 +119,117 @@
         <a href="sponsors.html">Sponsors</a>
     </nav>
     <section>
-        <h2>Research Focus</h2>
-        <p>The MOSAIC Lab is dedicated to advancing mobile and ubiquitous computing to address challenges in health, behavioral science, and everyday interaction. Our research spans a variety of domains:</p>
-
-        <h3>1. Mobile Health Sensing</h3>
-        <p>We develop wearable and mobile systems to monitor health outcomes, including physiological and behavioral data. Our notable work includes:</p>
-        <ul>
-            <li><strong>OpiTrack:</strong> A wearable-based tracker for opioid use utilizing temporal convolutional networks.</li>
-            <li><strong>BodyBeat:</strong> A wearable system that captures non-speech body sounds for health monitoring.</li>
-        </ul>
-
-        <h3>2. Cognitive and Behavioral Health</h3>
-        <p>We study the interaction between behavior, cognitive processes, and physiological signals to predict and analyze health outcomes. Examples include:</p>
-        <ul>
-            <li><strong>EarlyScreen:</strong> A multi-scale framework for predicting neural activation and psychopathology in preschool children.</li>
-            <li><strong>Prefrontal Modulation:</strong> Research on frustration-related physiology in children with varying irritability levels.</li>
-        </ul>
-
-        <h3>3. Digital Biomarkers and Epidemiology</h3>
-        <p>Our work in digital epidemiology focuses on identifying biomarkers for health trends and disease outbreaks:</p>
-        <ul>
-            <li><strong>FluSense:</strong> A contactless syndromic surveillance system for hospital waiting areas.</li>
-            <li><strong>Structured Prediction Energy Networks:</strong> Joint prediction of cocaine craving and euphoria.</li>
-        </ul>
-
-        <h3>4. Signal Processing and AI in Ubiquitous Computing</h3>
-        <p>We leverage advanced signal processing and AI techniques to solve challenges in ubiquitous computing:</p>
-        <ul>
-            <li><strong>Knowledge Transfer Across Imaging Modalities:</strong> Enhancing mobile robot vision using adaptive autoencoders.</li>
-            <li><strong>Hyperspectral Image Super-Resolution:</strong> Improving imaging performance in arbitrary input-output band settings.</li>
-        </ul>
-
-        <h3>5. Interaction and Human-Centered Systems</h3>
-        <p>We design interactive systems that seamlessly integrate with daily life, such as:</p>
-        <ul>
-            <li><strong>Calico:</strong> Relocatable wearables with precise locomotion tracking.</li>
-            <li><strong>MechanoBeat:</strong> A system using harmonic oscillators and ultra-wideband radar for monitoring object interactions.</li>
-        </ul>
-
-        <h3>6. Multidisciplinary Research</h3>
-        <p>We tackle problems that intersect multiple disciplines, including sensor design, AI, and behavioral science:</p>
-        <ul>
-            <li><strong>Nutrilyzer:</strong> A mobile system for characterizing liquid food using the photoacoustic effect.</li>
-            <li><strong>NOSE:</strong> An odor sensing engine for ambient monitoring in kitchen environments.</li>
-        </ul>
+        <h2>Research Projects</h2>
+        <div class="projects-container">
+            <!-- Project Box 1 -->
+            <div class="project-box" onclick="showModal('modal1')">
+                <img src="assets/project_images/mobile_health_sensing.png" alt="Mobile Health Sensing">
+                <h3>Mobile Health Sensing</h3>
+            </div>
+            <!-- Project Box 2 -->
+            <div class="project-box" onclick="showModal('modal2')">
+                <img src="assets/project_images/cognitive_and_behavioral_health.png" alt="Cognitive and Behavioral Health">
+                <h3>Cognitive and Behavioral Health</h3>
+            </div>
+            <!-- Project Box 3 -->
+            <div class="project-box" onclick="showModal('modal3')">
+                <img src="assets/project_images/digital_epidemiology.png" alt="Digital Epidemiology">
+                <h3>Digital Epidemiology</h3>
+            </div>
+            <!-- Project Box 4 -->
+            <div class="project-box" onclick="showModal('modal4')">
+                <img src="assets/project_images/signal_processing_and_ai.png" alt="Signal Processing and AI">
+                <h3>Signal Processing and AI</h3>
+            </div>
+            <!-- Project Box 5 -->
+            <div class="project-box" onclick="showModal('modal5')">
+                <img src="assets/project_images/interaction_systems.png" alt="Interaction Systems">
+                <h3>Interaction Systems</h3>
+            </div>
+        </div>
     </section>
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Mobile Health Sensing</h2>
+            <p>Developing wearable and mobile systems to monitor health outcomes. Our work focuses on creating wearable devices that provide accurate, real-time health monitoring to support medical decisions.</p>
+            <ul>
+                <li><strong>OpiTrack:</strong> A wearable-based tracker for opioid use (IMWUT 2021).</li>
+                <li><strong>BodyBeat:</strong> A system that captures non-speech body sounds for health monitoring.</li>
+                <li>"Mobile Sensing of Alertness, Sleep and Circadian Rhythm: Hardware and Software Platform" (GetMobile 2020).</li>
+                <li>"Respiratory Rate Monitoring in Clinical Environments with a Contactless Ultra-Wideband Impulse Radar-based Sensor System" (Hawaii International Conference on System Sciences 2020).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Cognitive and Behavioral Health</h2>
+            <p>Exploring the interaction between cognitive processes and physiological signals. This theme aims to understand how behavior and brain activity influence mental health and cognitive performance.</p>
+            <ul>
+                <li>"EarlyScreen: Multi-scale Instance Fusion for Predicting Neural Activation and Psychopathology in Preschool Children" (IMWUT 2022).</li>
+                <li>"Prefrontal Modulation of Frustration-related Physiology in Preschool Children" (Developmental Cognitive Neuroscience 2022).</li>
+                <li>"Effect of Sleep and Biobehavioral Patterns on Multidimensional Cognitive Performance" (JMIR 2021).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Digital Epidemiology</h2>
+            <p>Researching health trends and disease outbreaks using digital biomarkers. Projects in this theme address syndromic surveillance and health monitoring in public spaces.</p>
+            <ul>
+                <li>"FluSense: A Contactless Syndromic Surveillance Platform for Influenza-Like Illness" (IMWUT 2020).</li>
+                <li>"Can mHealth Technology Help Mitigate the Effects of the COVID-19 Pandemic?" (IEEE Open Journal of Engineering in Medicine and Biology 2020).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Signal Processing and AI</h2>
+            <p>Leveraging AI and signal processing for ubiquitous computing challenges. This includes creating efficient algorithms to enhance image resolution and adapt models for diverse applications.</p>
+            <ul>
+                <li>"Knowledge Transfer Across Imaging Modalities Via Adaptive Autoencoders" (IROS 2021).</li>
+                <li>"Hyperspectral Image Super-Resolution in Arbitrary Input-Output Band Settings" (WACI 2022).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Interaction Systems</h2>
+            <p>Designing human-centered systems that integrate seamlessly with daily life. Our projects involve innovative technologies that enhance everyday interaction and usability.</p>
+            <ul>
+                <li>"Calico: Track Based Interactive and Relocatable Wearables" (IMWUT 2022).</li>
+                <li>"MechanoBeat: Monitoring Interactions with Everyday Objects" (UIST 2020).</li>
+                <li>"NOSE: A Novel Odor Sensing Engine for Ambient Monitoring" (IMWUT 2019).</li>
+            </ul>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 MOSAIC Lab | Halıcıoğlu Data Science Institute | UCSD</p>
     </footer>
+
+    <script>
+        function showModal(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
 </body>
 </html>
